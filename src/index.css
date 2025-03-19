@@ -1,0 +1,22 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: black;
+  background: url("../public/background-img.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.app{
+    /* background-image: url("../public/background-img.jpg") */
+}

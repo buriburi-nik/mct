@@ -1,0 +1,271 @@
+/* Reset default styles for consistency
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+/* Navbar base styles with subtle modern touches */
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff, #f5f7fa);
+  /* Subtle gradient */
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.navbar:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  /* Enhanced lift effect */
+}
+
+/* Logo with a sleek hover effect */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.logo:hover {
+  transform: translateX(-50%) scale(1.05);
+  /* Subtle zoom */
+  filter: drop-shadow(0 2px 6px rgba(0, 123, 255, 0.5));
+  /* Blue-tinted shadow */
+}
+
+/* Menu styling with modern typography */
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 25px;
+  position: relative;
+  color: #333;
+  /* Softer black for modernity */
+  font-family: 'Poppins', sans-serif;
+  /* Modern font (add via Google Fonts) */
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  color: #007bff;
+  /* Vibrant blue on hover */
+}
+
+/* Animated underline effect */
+.menu li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  /* Gradient underline */
+  transition: width 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* Bouncy easing */
+}
+
+.menu li:hover::after {
+  width: 100%;
+  /* Grows from left to right */
+}
+
+/* Right-side icons with cool hover effects */
+.nav-ri {
+  display: flex;
+  align-items: center;
+}
+
+.nav-ri img {
+  height: 24px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-ri img:hover {
+  transform: scale(1.1);
+  /* Slight scale without rotation */
+  filter: brightness(1.2) drop-shadow(0 2px 4px rgba(0, 123, 255, 0.3));
+  /* Brighten + shadow */
+}
+
+/* Basket dot with enhanced pulse */
+.basket-container {
+  position: relative;
+}
+
+.basket-container .dot {
+  position: absolute;
+  top: -7px;
+  right: 9px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #ff4d4d, #ff1a1a);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.7);
+  /* Stronger glow */
+}
+
+/* Sign-in button with glow effect */
+.sign-in-btn {
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  /* Slightly larger */
+  border-radius: 6px;
+  /* Softer corners */
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.sign-in-btn:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+  /* Glowing effect */
+}
+
+/* Hamburger icon with circular highlight */
+.hamburger {
+  display: none;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: rotate(90deg);
+  /* Subtle rotation */
+  background-color: rgba(0, 123, 255, 0.1);
+  /* Circular highlight */
+  border-radius: 50%;
+  padding: 5px;
+  /* Ensures circle fits */
+}
+
+.sign-in-menu-item {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    background: #ffffff;
+    /* Solid white for mobile clarity */
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease-in-out;
+    /* Smoother transition */
+  }
+
+  .menu-open .menu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    border-radius: 0 0 10px 10px;
+    /* Rounded bottom edges */
+  }
+
+  .menu li {
+    margin: 15px 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+    text-align: center;
+  }
+
+  .menu-open .menu li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .menu li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .menu li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .menu li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .nav-ri {
+    display: flex;
+    align-items: center;
+  }
+
+  .sign-in-btn {
+    display: none;
+  }
+
+  .sign-in-menu-item {
+    display: block;
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Pulse animation for the dot */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
