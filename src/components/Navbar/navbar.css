@@ -1,183 +1,162 @@
-/* Reset default styles for consistency
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-} */
+/* navbar.css */
 
-/* Navbar base styles with subtle modern touches */
+/* Base Styles */
 .navbar {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #ffffff, #f5f7fa);
-  /* Subtle gradient */
-  padding: 15px 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.4s ease-in-out;
+  padding: 1rem 5%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
 }
 
-.navbar:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  /* Enhanced lift effect */
-}
-
-/* Logo with a sleek hover effect */
 .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 50px;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .logo:hover {
-  transform: translateX(-50%) scale(1.05);
-  /* Subtle zoom */
-  filter: drop-shadow(0 2px 6px rgba(0, 123, 255, 0.5));
-  /* Blue-tinted shadow */
+  transform: scale(1.05);
 }
 
-/* Menu styling with modern typography */
+/* Desktop Menu */
 .menu {
-  list-style: none;
   display: flex;
+  gap: 2rem;
+  list-style: none;
   margin: 0;
   padding: 0;
+  flex: 1;
+  justify-content: center;
 }
 
 .menu li {
-  margin-right: 25px;
   position: relative;
+}
+
+.menu a {
+  text-decoration: none;
   color: #333;
-  /* Softer black for modernity */
-  font-family: 'Poppins', sans-serif;
-  /* Modern font (add via Google Fonts) */
-  font-size: 16px;
-  text-transform: uppercase;
   font-weight: 500;
-  letter-spacing: 0.8px;
-  padding: 5px 10px;
+  font-size: 1rem;
   transition: color 0.3s ease;
-  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
 }
 
-.menu li:hover {
-  color: #007bff;
-  /* Vibrant blue on hover */
+.menu a:hover {
+  color: #ff6b6b;
 }
 
-/* Animated underline effect */
-.menu li::after {
+/* Active State */
+.menu .active {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.menu .active::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -8px;
   left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #007bff, #00d4ff);
-  /* Gradient underline */
-  transition: width 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  /* Bouncy easing */
-}
-
-.menu li:hover::after {
   width: 100%;
-  /* Grows from left to right */
+  height: 2px;
+  background-color: #ff6b6b;
+  animation: underline 0.3s ease;
 }
 
-/* Right-side icons with cool hover effects */
-.nav-ri {
+@keyframes underline {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+/* Right Navigation Section */
+.nav-right {
   display: flex;
   align-items: center;
+  gap: 1.5rem;
 }
 
-.nav-ri img {
+.search-icon {
+  width: 24px;
   height: 24px;
-  margin-right: 15px;
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.nav-ri img:hover {
+.search-icon:hover {
   transform: scale(1.1);
-  /* Slight scale without rotation */
-  filter: brightness(1.2) drop-shadow(0 2px 4px rgba(0, 123, 255, 0.3));
-  /* Brighten + shadow */
 }
 
-/* Basket dot with enhanced pulse */
 .basket-container {
   position: relative;
+  cursor: pointer;
 }
 
-.basket-container .dot {
+.basket-container img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.basket-container:hover img {
+  transform: scale(1.1);
+}
+
+.dot {
   position: absolute;
-  top: -7px;
-  right: 9px;
-  width: 12px;
-  height: 12px;
-  background: radial-gradient(circle, #ff4d4d, #ff1a1a);
+  top: -5px;
+  right: -5px;
+  width: 18px;
+  height: 18px;
+  background: #ff6b6b;
   border-radius: 50%;
-  animation: pulse 1.5s infinite ease-in-out;
-  box-shadow: 0 0 10px rgba(255, 77, 77, 0.7);
-  /* Stronger glow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
 }
 
-/* Sign-in button with glow effect */
 .sign-in-btn {
-  background: linear-gradient(45deg, #007bff, #00d4ff);
+  background: #ff6b6b;
   color: white;
   border: none;
-  padding: 10px 20px;
-  /* Slightly larger */
-  border-radius: 6px;
-  /* Softer corners */
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.sign-in-btn:hover {
-  transform: scale(1.05) translateY(-3px);
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
-  /* Glowing effect */
-}
-
-/* Hamburger icon with circular highlight */
-.hamburger {
-  display: none;
-  height: 24px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.hamburger:hover {
-  transform: rotate(90deg);
-  /* Subtle rotation */
-  background-color: rgba(0, 123, 255, 0.1);
-  /* Circular highlight */
-  border-radius: 50%;
-  padding: 5px;
-  /* Ensures circle fits */
+.sign-in-btn:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
 
-.sign-in-menu-item {
+/* Mobile Menu */
+.hamburger {
   display: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
 }
 
-/* Mobile styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
-    justify-content: space-between;
-    background: #ffffff;
-    /* Solid white for mobile clarity */
-  }
-
-  .logo {
-    position: static;
-    transform: none;
+    padding: 1rem 5%;
+    position: relative;
   }
 
   .menu {
@@ -185,87 +164,62 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
-    background: #ffffff;
+    right: 0;
+    background: white;
     flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: all 0.5s ease-in-out;
-    /* Smoother transition */
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 10px 10px;
   }
 
   .menu-open .menu {
     display: flex;
-    opacity: 1;
-    transform: translateY(0);
-    border-radius: 0 0 10px 10px;
-    /* Rounded bottom edges */
   }
 
   .menu li {
-    margin: 15px 0;
-    opacity: 0;
-    transform: translateX(-20px);
-    transition: all 0.4s ease;
-    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
   }
 
-  .menu-open .menu li {
-    opacity: 1;
-    transform: translateX(0);
+  .menu li:last-child {
+    border-bottom: none;
   }
 
-  .menu li:nth-child(1) {
-    transition-delay: 0.1s;
+  .menu a {
+    width: 100%;
+    display: block;
   }
 
-  .menu li:nth-child(2) {
-    transition-delay: 0.2s;
+  .hamburger {
+    display: block;
   }
 
-  .menu li:nth-child(3) {
-    transition-delay: 0.3s;
-  }
-
-  .nav-ri {
-    display: flex;
-    align-items: center;
+  .nav-right {
+    gap: 1rem;
   }
 
   .sign-in-btn {
     display: none;
   }
 
-  .sign-in-menu-item {
-    display: block;
-    background: linear-gradient(45deg, #007bff, #00d4ff);
-    color: white;
-    padding: 10px;
-    border-radius: 4px;
-    margin: 10px 0;
-  }
-
-  .hamburger {
-    display: block;
+  .menu .active::after {
+    bottom: 0;
   }
 }
 
-/* Pulse animation for the dot */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
+/* Animation for Mobile Menu */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 
-  50% {
-    transform: scale(1.4);
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: scale(1);
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.menu-open .menu {
+  animation: slideDown 0.3s ease forwards;
 }
