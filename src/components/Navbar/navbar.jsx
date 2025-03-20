@@ -96,7 +96,7 @@ const Navbar = () => {
       </div>
 
       <img
-        src="../../../public/image.png"
+        src="/image.png"
         alt="Menu Toggle"
         className="hamburger"
         onClick={() => setMenuOpen(!menuOpen)}
