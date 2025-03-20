@@ -7,7 +7,7 @@ import Placeorder from './pages/PlaceOrder/Placeorder'
 import Footer from './components/Footer/Footer'
 import FoodDisplay from './components/FoodDisplay/FoodDisplay'; 
 import Services from './pages/Services/Services'
-import ContactUs from './pages/Contactus/ContactUs'
+import ContactUs from './pages/ContactUs/ContactUs'
 
 const App = () => {
   return (
