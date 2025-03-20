@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer'
 import FoodDisplay from './components/FoodDisplay/FoodDisplay'; 
 import Services from './pages/Services/Services'
 import ContactUs from './pages/ContactUs/ContactUs'
+import Payment from './pages/Payment/Payment'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route name='placeorder' path='/order' element={<Placeorder />} />
           <Route name='services' path='/services' element={<Services />} /> 
           <Route name='contact' path='/contact' element={<ContactUs />} />
+          <Route name='payment' path='/payment' element={<Payment/>} />
 
       </Routes>
     </div>

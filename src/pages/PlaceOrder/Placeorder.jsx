@@ -1,130 +1,64 @@
-// src/pages/PlaceOrder/Placeorder.jsx
-import React, { useContext, useState } from 'react'
-import './Placeorder.css'
-import { storeContext } from '../../storeContext'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
+import './Placeorder.css';
+import { useContext } from 'react';
+import { storeContext } from '../../storeContext';
+import { useNavigate } from 'react-router-dom';
 
 const Placeorder = () => {
-  const { cartItems, food_list, setCartItems } = useContext(storeContext)
-  const navigate = useNavigate()
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    address: '',
-    phone: ''
-  })
+  const navigate = useNavigate();
 
-  // Calculate total amount
-  const getTotalCartAmount = () => {
-    let totalAmount = 0
-    for(const item in cartItems) {
-      if(cartItems[item] > 0) {
-        let itemInfo = food_list.find((product) => product.id === Number(item))
-        totalAmount += itemInfo.price * cartItems[item]
-      }
-    }
-    return totalAmount
-  }
-
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Here you would typically send the order to a backend
-    alert('Order placed successfully!')
-    setCartItems({}) // Clear cart
-    navigate('/') // Redirect to home
-  }
-
+  const {getTotals } = useContext(storeContext)
+    const { subtotal, deliveryFee, total } = getTotals()
   return (
-    <div className='placeorder-container'>
-      <div className='placeorder-items'>
-        <h1>Complete Your Order</h1>
-        {Object.keys(cartItems).length === 0 ? (
-          <div className='empty-cart'>
-            <h2>Your cart is empty</h2>
-            <Link to='/'>
-              <button>Go to Menu</button>
-            </Link>
-          </div>
-        ) : (
-          <div className='order-process'>
-            <div className='order-summary'>
-              <h2>Order Summary</h2>
-              {food_list.map((item) => {
-                if(cartItems[item.id] > 0) {
-                  return (
-                    <div className='order-item' key={item.id}>
-                      <p>{item.name} x {cartItems[item.id]}</p>
-                      <p>${item.price * cartItems[item.id]}</p>
-                    </div>
-                  )
-                }
-                return null
-              })}
-              <div className='order-total'>
-                <h3>Total:</h3>
-                <h3>${getTotalCartAmount()}</h3>
-              </div>
-            </div>
+    <div className='placeorder'>
+      <div className="placeorder-left">
+        <p className="title">
+          Order Details
+        </p>
+        <div className="muttli-feild">
+          <input type="text" placeholder='First Name' />
+          <input type="text" placeholder='Last Name'/>
+        </div>
 
-            <div className='order-form'>
-              <h2>Delivery Information</h2>
-              <form onSubmit={handleSubmit}>
-                <div className='form-group'>
-                  <label>Full Name</label>
-                  <input 
-                    type='text' 
-                    name='name' 
-                    value={formData.name} 
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <div className='form-group'>
-                  <label>Email</label>
-                  <input 
-                    type='email' 
-                    name='email' 
-                    value={formData.email} 
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <div className='form-group'>
-                  <label>Address</label>
-                  <textarea 
-                    name='address' 
-                    value={formData.address} 
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <div className='form-group'>
-                  <label>Phone</label>
-                  <input 
-                    type='tel' 
-                    name='phone' 
-                    value={formData.phone} 
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <div className='form-actions'>
-                  <button type='submit'>Place Order</button>
-                  <Link to='/cart'>
-                    <button type='button' className='back-to-cart'>Back to Cart</button>
-                  </Link>
-                </div>
-              </form>
+        <input type="text" placeholder='email address'/>
+        <input type="text" placeholder='street'/>
+
+        <div className="muttli-feild">
+          <input type="text" placeholder='City' />
+          <input type="text" placeholder='State'/>
+        </div>
+
+        <div className="muttli-feild">
+          <input type="text" placeholder='Zip code' />
+          <input type="text" placeholder='Country'/>
+        </div>
+
+        <input type="text" placeholder='Phone number'/>
+
+      </div>
+
+
+      <div className="placeorder-right">
+          <div className="cart-total  big">
+          <h2>Cart Totals</h2>
+          <div>
+            <div className="cart-total-details">
+              <p>Subtotal</p>
+              <p>${subtotal.toFixed(2)}</p>
+            </div>
+            <hr />
+            <div className="cart-total-details">
+              <p>Delivery Fee</p>
+              <p>${deliveryFee.toFixed(2)}</p>
+            </div>
+            <hr />
+            <div className="cart-total-details">
+              <b>Total</b>
+              <b>${total.toFixed(2)}</b>
             </div>
           </div>
-        )}
+          <button className="checkout-btn" onClick={()=> navigate('/payment')}>Proceed to Checkout</button>
+        </div>
       </div>
     </div>
   )

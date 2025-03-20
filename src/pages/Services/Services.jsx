@@ -1,7 +1,9 @@
 import React from 'react'
 import './Services.css'
+import { useNavigate } from 'react-router-dom'
 
 const Services = () => {
+  const navigate = useNavigate();
   const services = [
     {
       id: 1,
@@ -75,7 +77,7 @@ const Services = () => {
       <div className="service-cta">
         <h2>Ready to elevate your dining experience?</h2>
         <p>Contact our customer service team to learn more about our services and how we can customize them to meet your needs.</p>
-        <button className="cta-button">Contact Us</button>
+        <button className="cta-button" onClick={()=> navigate('/contact')}>Contact Us</button>
       </div>
 
       <div className="service-faq">

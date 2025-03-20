@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import "./navbar.css";
 import { assets } from '../../assets/frontend_assets/assets';
 import { Link } from 'react-router-dom';
+import { storeContext } from '../../storeContext';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("home");
+
+  const {getTotals} = useContext(storeContext);
 
   return (
     <div className={`navbar ${menuOpen ? 'menu-open' : ''}`}>
@@ -69,7 +72,7 @@ const Navbar = () => {
         <div className="basket-container">
           <Link to='/cart' onClick={() => setMenuOpen(false)}>
             <img src={assets.basket_icon} alt="Basket" />
-            <div className="dot"></div>
+            {getTotals().subtotal > 0 && <div className="dot"></div>}
           </Link>
         </div>
         <button className="sign-in-btn">Sign In</button>
