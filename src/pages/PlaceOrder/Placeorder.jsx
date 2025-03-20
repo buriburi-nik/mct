@@ -1,11 +1,11 @@
 // src/pages/PlaceOrder/Placeorder.jsx
 import React, { useContext, useState } from 'react'
 import './Placeorder.css'
-import { StoreContext } from '../../context/StoreContext'
+import { storeContext } from '../../context/storeContext'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Placeorder = () => {
-  const { cartItems, food_list, setCartItems } = useContext(StoreContext)
+  const { cartItems, food_list, setCartItems } = useContext(storeContext)
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
