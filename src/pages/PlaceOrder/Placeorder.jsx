@@ -1,7 +1,7 @@
 // src/pages/PlaceOrder/Placeorder.jsx
 import React, { useContext, useState } from 'react'
 import './Placeorder.css'
-import { StoreContext } from '../../Context/StoreContext'
+import { StoreContext } from '../../context/StoreContext'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Placeorder = () => {
