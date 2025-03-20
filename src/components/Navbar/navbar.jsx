@@ -4,7 +4,8 @@ import { assets } from '../../assets/frontend_assets/assets';
 import { Link } from 'react-router-dom';
 import { storeContext } from '../../storeContext';
 import AuthModal from '../SignIn/AuthModal';
-import{hum} from  "../../../public/image.png"
+import hum from "../../../public/image.png";
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
