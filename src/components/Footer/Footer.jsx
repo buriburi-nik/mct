@@ -72,24 +72,24 @@ const Footer = () => {
         </ul>
       </div>
 
+<div className="footer-section right">
+  <h2 className="section-title">Contact</h2>
+  <ul className="contact-info">
+    <li className="contact-item">
+      <span className="contact-icon">📍</span>
+      <span>123 Gourmet Street,<br/>Food City, Nagpur</span>
+    </li>
+    <li className="contact-item">
+      <span className="contact-icon">📞</span>
+      <a href="tel:+1234567890">+1 (234) 567-890</a>
+    </li>
+    <li className="contact-item">
+      <span className="contact-icon">📧</span>
+      <a href="mailto:support@deliciouseats.com">support@deliciouseats.com</a>
+    </li>
+  </ul>
+</div>
 
-        <div className="footer-section right">
-          <h2 className="section-title">Contact</h2>
-          <ul className="contact-info">
-            <li className="contact-item">
-              <img src={assets.location_icon} alt="Location" className="contact-icon" />
-              <span>123 Gourmet Street,<br/>Food City, Nagpur</span>
-            </li>
-            <li className="contact-item">
-              <img src={assets.phone_icon} alt="Phone" className="contact-icon" />
-              <a href="tel:+1234567890">+1 (234) 567-890</a>
-            </li>
-            <li className="contact-item">
-              <img src={assets.email_icon} alt="Email" className="contact-icon" />
-              <a href="mailto:support@deliciouseats.com">support@deliciouseats.com</a>
-            </li>
-          </ul>
-        </div>
       </div>
       
       <div className="footer-bottom">

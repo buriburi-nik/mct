@@ -161,3 +161,41 @@
     display: none;
   }
 }
+
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  /* Increase emoji size */
+}
+
+.contact-item span {
+  font-size: 1rem;
+  /* Adjust text size */
+  color: #ffffff;
+}
+
+.contact-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.contact-item a:hover {
+  color: #e52b35;
+}
