@@ -125,6 +125,7 @@ margin-right: 100px;
     padding: 15px 20px;
   }
 
+
   .menu {
     position: fixed;
     top: 0;
@@ -149,7 +150,8 @@ margin-right: 100px;
   }
 
   .nav-right {
-    gap: 20px;
+    margin-left: 120px;
+    padding-right: 10px;
   }
 
   .search-icon {
