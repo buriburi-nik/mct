@@ -93,22 +93,24 @@ hr {
 
 .checkout-btn {
   width: 100%;
-  padding: 1rem;
-  background: #ff5a5f;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-top: 1.5rem;
+  background-color: #e52b35;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+    box-shadow: 5px 5px 0px #144d5a;
+    transition: all 0.3s ease
 }
 
 .checkout-btn:hover {
-  background: #ff444a;
-  transform: translateY(-1px);
-  box-shadow: 0 3px 12px rgba(255, 90, 95, 0.25);
+  transform: translateY(-3px);
+    box-shadow: 7px 7px 0px #144d5a;
 }
 
 /* Responsive Design */

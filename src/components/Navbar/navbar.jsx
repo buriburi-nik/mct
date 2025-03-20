@@ -1,26 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from 'react'; 
 import "./navbar.css";
 import { assets } from '../../assets/frontend_assets/assets';
 import { Link } from 'react-router-dom';
 import { storeContext } from '../../storeContext';
-
 import AuthModal from '../SignIn/AuthModal';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("home");
-
   const [showAuthModal, setShowAuthModal] = useState(false);
-
   const { getTotals } = useContext(storeContext);
 
-  const handleOpenAuthModal = () => {
-    setShowAuthModal(true);
-  };
-
-  const handleCloseAuthModal = () => {
-    setShowAuthModal(false);
-  };
+  const handleOpenAuthModal = () => setShowAuthModal(true);
+  const handleCloseAuthModal = () => setShowAuthModal(false);
 
   return (
     <div className={`navbar ${menuOpen ? 'menu-open' : ''}`}>
@@ -29,6 +21,13 @@ const Navbar = () => {
       </Link>
       
       <ul className="menu">
+        {menuOpen && (
+          <li className="close-menu">
+            <button onClick={() => setMenuOpen(false)} aria-label="Close Menu">
+              X
+            </button>
+          </li>
+        )}
         <li>
           <Link
             to='/'
@@ -77,6 +76,9 @@ const Navbar = () => {
             Contact
           </Link>
         </li>
+        <li className="mobile-signin">
+           <button onClick={handleOpenAuthModal}>Sign In</button>
+        </li>
       </ul>
 
       <div className="nav-right">
@@ -90,18 +92,17 @@ const Navbar = () => {
         <button className="sign-in-btn" onClick={handleOpenAuthModal}>
           Sign In
         </button>
+        
       </div>
 
       <img
-        src={assets.hamburger_icon}
+        src="../../../public/image.png"
         alt="Menu Toggle"
         className="hamburger"
         onClick={() => setMenuOpen(!menuOpen)}
       />
 
-      {showAuthModal && (
-        <AuthModal onClose={handleCloseAuthModal} />
-      )}
+      {showAuthModal && <AuthModal onClose={handleCloseAuthModal} />}
     </div>
   );
 };

@@ -43,17 +43,24 @@
 }
 
 .cart-items-item button {
-  background: #ff4c4c;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
+  background-color: #e52b35;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+    box-shadow: 5px 5px 0px #144d5a;
+    transition: all 0.3s ease;
 }
 
 .cart-items-item button:hover {
-  background: #e43e3e;
+  transform: translateY(-3px);
+    box-shadow: 7px 7px 0px #144d5a;
 }
 
 /* Cart Bottom Section */
@@ -88,19 +95,24 @@
 
 .checkout-btn {
   width: 100%;
-  padding: 12px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 16px;
-  margin-top: 10px;
+    background-color: #e52b35;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+      box-shadow: 5px 5px 0px #144d5a;
+      transition: all 0.3s ease
 }
 
 .checkout-btn:hover {
-  background: #0056b3;
+  transform: translateY(-3px);
+    box-shadow: 7px 7px 0px #144d5a;
 }
 
 /* Promo Code Section */
@@ -128,16 +140,24 @@
 .cart-promo button {
   width: 30%;
   background: #28a745;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
+    /* background-color: #e52b35; */
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+      box-shadow: 5px 5px 0px #144d5a;
+      transition: all 0.3s ease;
 }
 
 .cart-promo button:hover {
-  background: #218838;
+transform: translateY(-3px);
+  box-shadow: 7px 7px 0px #144d5a;
 }
 
 /* Responsive Design */

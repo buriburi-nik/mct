@@ -43,6 +43,13 @@
   font-weight: 600;
 }
 
+.modal-content p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -93,19 +100,24 @@ button[type="submit"]:hover {
 }
 
 .google-btn {
-  background: white;
-  color: #757575;
-  border: 1px solid #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 1.5rem;
+  background-color: #e52b35;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+    box-shadow: 5px 5px 0px #144d5a;
+    transition: all 0.3s ease;
 }
 
 .google-btn:hover {
-  background: #f8f8f8;
-  border-color: #d2d2d2;
+  background: #1f69e0;
+
   transform: translateY(-1px);
 }
 
@@ -147,7 +159,8 @@ button[type="submit"]:hover {
 }
 
 .toggle-btn:hover {
-  color: #ff3636;
+    transform: translateY(-3px);
+      box-shadow: 7px 7px 0px #144d5a;
 }
 
 .close-btn {
@@ -156,10 +169,22 @@ button[type="submit"]:hover {
   color: #4a4a4a;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
+    font-weight: bold;
+      font-size: 16px;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+      box-shadow: 5px 5px 0px #144d5a;
+      transition: all 0.3s ease;
 }
 
 .close-btn:hover {
-  background: #eee;
+    transform: translateY(-3px);
+      box-shadow: 7px 7px 0px #144d5a;
 }
 
 .error-message {
@@ -190,6 +215,19 @@ button[disabled]:hover {
 .sign-out-btn {
   background: #FF4A4A;
   color: white;
+    font-weight: bold;
+      font-size: 16px;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+      box-shadow: 5px 5px 0px #144d5a;
+      transition: all 0.3s ease;
+    
+
 }
 
 @media (max-width: 480px) {

@@ -1,5 +1,5 @@
 .footer {
-  background: #1a1a1a;
+  background: #144d5a;
   color: #ffffff;
   padding: 4rem 2rem 0;
   font-family: 'Poppins', sans-serif;
@@ -40,7 +40,7 @@
 }
 
 .footer-links a:hover {
-  color: #ff6b6b;
+  color: #e52b35;
 }
 
 .social-media {
@@ -75,7 +75,7 @@
   left: 0;
   width: 50px;
   height: 2px;
-  background: #ff6b6b;
+  background: #e52b35;
 }
 
 .footer-menu {
@@ -128,7 +128,7 @@
 }
 
 .contact-item a:hover {
-  color: #ff6b6b;
+  color: #e52b35;
 }
 
 .footer-bottom {

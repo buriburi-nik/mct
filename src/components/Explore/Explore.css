@@ -13,7 +13,7 @@
 }
 
 .explore-menu h1 span {
-  background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+  background: #e52b35;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -153,8 +153,8 @@
   }
 
   .explore-menu-item img {
-    width: 140px;
-    height: 140px;
+    width: 260px;
+    height: 260px;
   }
 }
 
@@ -168,10 +168,10 @@
     font-size: 2.2rem;
   }
 
-  .explore-menu-item img {
+  /* .explore-menu-item img {
     width: 120px;
     height: 120px;
-  }
+  } */
 
   .explore-menu-item p {
     font-size: 1rem;
@@ -197,8 +197,8 @@
   }
 
   .explore-menu-item img {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
   }
 
   .explore-menu-item p {

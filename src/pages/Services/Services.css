@@ -16,7 +16,7 @@
 .services-hero h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #ff6b6b;
+    color:#e52b35;
 }
 
 .services-hero p {
@@ -54,7 +54,7 @@
 .service-card h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #ff6b6b;
+  color: #144d5a;
 }
 
 .service-card p {
@@ -104,7 +104,7 @@
 .service-cta h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #ff6b6b;
+  color: #144d5a;
 }
 
 .service-cta p {
@@ -115,20 +115,27 @@
 }
 
 .cta-button {
-  background-color: #ff6b6b;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  background-color: #e52b35;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+    box-shadow: 5px 5px 0px #144d5a;
+    transition: all 0.3s ease;
+  width: 30%;
 }
 
+
 .cta-button:hover {
-  background-color: #ff5252;
-}
+
+transform: translateY(-3px);
+  box-shadow: 7px 7px 0px #144d5a;}
 
 .service-faq {
   background-color: rgba(255, 255, 255, 0.9);
@@ -180,5 +187,9 @@
 
   .service-cta h2 {
     font-size: 1.8rem;
+  }
+
+  .cta-button{
+    width: 50%;
   }
 }

@@ -49,14 +49,19 @@
 
 button[type="submit"] {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: #4c9fff;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+    box-shadow: 5px 5px 0px #144d5a;
+    transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
@@ -86,4 +91,20 @@ button[type="submit"]:disabled {
   font-weight: bold;
   text-align: center;
   margin-bottom: 1.5rem;
+}
+
+.close-button{
+    background-color: #41f0d6;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+      box-shadow: 5px 5px 0px #144d5a;
+      transition: all 0.3s ease;
 }

@@ -1,0 +1,25 @@
+.custom-btn {
+  background-color: #e52b35;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'IBM Plex Mono', monospace;
+  box-shadow: 5px 5px 0px #144d5a;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 7px 7px 0px #144d5a;
+}
+
+.custom-btn:active {
+  transform: translateY(2px);
+  box-shadow: 3px 3px 0px #144d5a;
+}

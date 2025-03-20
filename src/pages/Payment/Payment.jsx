@@ -120,7 +120,7 @@ const Payment = () => {
         {error && <p className="error-message">{error}</p>}
         {success && <p className="success-message">{success}</p>}
 
-        <button onClick={handleClose} style={{ marginTop: '1rem' }}>
+        <button onClick={handleClose} style={{ marginTop: '1rem' } } className="close-button">
           Close
         </button>
       </div>
