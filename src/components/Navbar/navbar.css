@@ -192,6 +192,10 @@ margin-right: 100px;
     width: 85%;
   }
 
+    .nav-right {
+      margin-left: 120px;
+      padding-right: 10px;
+    }
   .logo {
     height: 35px;
   }
