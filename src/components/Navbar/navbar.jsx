@@ -4,11 +4,23 @@ import { assets } from '../../assets/frontend_assets/assets';
 import { Link } from 'react-router-dom';
 import { storeContext } from '../../storeContext';
 
+import AuthModal from '../SignIn/AuthModal';
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("home");
 
-  const {getTotals} = useContext(storeContext);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+
+  const { getTotals } = useContext(storeContext);
+
+  const handleOpenAuthModal = () => {
+    setShowAuthModal(true);
+  };
+
+  const handleCloseAuthModal = () => {
+    setShowAuthModal(false);
+  };
 
   return (
     <div className={`navbar ${menuOpen ? 'menu-open' : ''}`}>
@@ -18,8 +30,8 @@ const Navbar = () => {
       
       <ul className="menu">
         <li>
-          <Link 
-            to='/' 
+          <Link
+            to='/'
             className={activeMenu === "home" ? "active" : ""}
             onClick={() => {
               setActiveMenu("home");
@@ -30,8 +42,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link 
-            to='/menu' 
+          <Link
+            to='/menu'
             className={activeMenu === "menu" ? "active" : ""}
             onClick={() => {
               setActiveMenu("menu");
@@ -42,8 +54,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link 
-            to='/services' 
+          <Link
+            to='/services'
             className={activeMenu === "services" ? "active" : ""}
             onClick={() => {
               setActiveMenu("services");
@@ -54,8 +66,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link 
-            to='/contact' 
+          <Link
+            to='/contact'
             className={activeMenu === "contact" ? "active" : ""}
             onClick={() => {
               setActiveMenu("contact");
@@ -75,7 +87,9 @@ const Navbar = () => {
             {getTotals().subtotal > 0 && <div className="dot"></div>}
           </Link>
         </div>
-        <button className="sign-in-btn">Sign In</button>
+        <button className="sign-in-btn" onClick={handleOpenAuthModal}>
+          Sign In
+        </button>
       </div>
 
       <img
@@ -84,6 +98,10 @@ const Navbar = () => {
         className="hamburger"
         onClick={() => setMenuOpen(!menuOpen)}
       />
+
+      {showAuthModal && (
+        <AuthModal onClose={handleCloseAuthModal} />
+      )}
     </div>
   );
 };
