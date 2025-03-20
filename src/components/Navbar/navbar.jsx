@@ -4,6 +4,7 @@ import { assets } from '../../assets/frontend_assets/assets';
 import { Link } from 'react-router-dom';
 import { storeContext } from '../../storeContext';
 import AuthModal from '../SignIn/AuthModal';
+import{hum} from  "../../../public/image.png"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -96,7 +97,7 @@ const Navbar = () => {
       </div>
 
       <img
-        src="/image.png"
+        src={hum}
         alt="Menu Toggle"
         className="hamburger"
         onClick={() => setMenuOpen(!menuOpen)}
