@@ -157,4 +157,7 @@
   .contact-item {
     justify-content: center;
   }
+  .centre{
+    display: none;
+  }
 }
