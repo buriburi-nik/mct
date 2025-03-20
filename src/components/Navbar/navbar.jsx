@@ -84,7 +84,7 @@ const Navbar = () => {
       </ul>
 
       <div className="nav-right">
-        <img src={assets.search_icon} alt="Search" className="search-icon" />
+        {/* <img src={assets.search_icon} alt="Search" className="search-icon" /> */}
         <div className="basket-container">
           <Link to='/cart' onClick={() => setMenuOpen(false)}>
             <img src={assets.basket_icon} alt="Basket" />
